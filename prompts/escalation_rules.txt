@@ -1,0 +1,15 @@
+ESCALATION POLICY MATRIX FOR APPLE SUPPORT:
+
+AUTO_HANDLE CONDITIONS:
+- Customer inquiry matches standard Apple troubleshooting playbooks (Battery health check under Settings > Battery, background app refresh optimization, iOS update installation/force restart, keyboard autocorrect reset, Wi-Fi/Bluetooth network reset, general store hours).
+- Classification confidence >= 0.60 and margin >= 0.15.
+- Strong retrieval similarity (>= 0.18) to verified historical Apple Support resolution.
+- No safety hazard, fraud claim, or account security lockout.
+
+ESCALATE TO HUMAN SPECIALIST CONDITIONS:
+1. Physical Hardware & Screen Damage: Cracked glass, display lines, liquid damage, camera or speaker hardware failure requiring Genius Bar reservation or mail-in repair depot.
+2. Apple ID & Account Security: Disabled/locked Apple ID, 2FA code delivery failure, forgotten passcodes, or Activation Lock requiring identity verification.
+3. App Store Billing & Financial Disputes: In-app purchase refunds, unauthorized credit card charges, or subscription disputes requiring purchase ledger access.
+4. Low Intent Confidence (< 0.60) or Ambiguity: Ambiguous customer description or multiple conflicting failure symptoms.
+5. Legal Threats & Severe Churn: Threats of lawsuits, consumer complaints, fraud claims, or explicit demands for a human manager.
+6. Safety Hazards: Swollen batteries, sparks, overheating casing, or smoke requiring immediate device containment instructions.

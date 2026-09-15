@@ -1,0 +1,64 @@
+{
+  "Baseline 1 (Trivial)": {
+    "intent_accuracy": 0.145,
+    "intent_macro_f1": 0.0362,
+    "escalation_accuracy": 0.22,
+    "escalate_f1": 0.3607,
+    "autohandle_f1": 0.0,
+    "mean_retrieval_similarity": 0.0,
+    "mean_grounding_token_overlap": 0.0,
+    "llm_judge_overall_mean": 4.3,
+    "llm_judge_pass_rate": 1.0,
+    "llm_judge_dimensions": {
+      "intent_appropriateness": 3.72,
+      "groundedness": 5.0,
+      "actionability": 4.0,
+      "brand_tone_privacy": 5.0,
+      "escalation_appropriateness": 3.83
+    }
+  },
+  "Baseline 2 (Simple ML)": {
+    "intent_accuracy": 0.595,
+    "intent_macro_f1": 0.5965,
+    "escalation_accuracy": 0.22,
+    "escalate_f1": 0.3607,
+    "autohandle_f1": 0.0,
+    "mean_retrieval_similarity": 0.2984,
+    "mean_grounding_token_overlap": 0.8869,
+    "llm_judge_overall_mean": 4.44,
+    "llm_judge_pass_rate": 1.0,
+    "llm_judge_dimensions": {
+      "intent_appropriateness": 4.26,
+      "groundedness": 4.95,
+      "actionability": 4.05,
+      "brand_tone_privacy": 5.0,
+      "escalation_appropriateness": 3.83
+    }
+  },
+  "Proposed System": {
+    "intent_accuracy": 0.665,
+    "intent_macro_f1": 0.6657,
+    "escalation_accuracy": 0.745,
+    "escalate_f1": 0.5234,
+    "autohandle_f1": 0.8259,
+    "mean_retrieval_similarity": 0.2644,
+    "mean_grounding_token_overlap": 0.7253,
+    "llm_judge_overall_mean": 4.77,
+    "llm_judge_pass_rate": 0.995,
+    "llm_judge_dimensions": {
+      "intent_appropriateness": 4.42,
+      "groundedness": 5.0,
+      "actionability": 5.0,
+      "brand_tone_privacy": 5.0,
+      "escalation_appropriateness": 4.46
+    }
+  },
+  "human_judge_agreement": {
+    "sample_size": 200,
+    "percentage_agreement": 0.565,
+    "cohens_kappa": 0.0127,
+    "pearson_correlation": 0.8281,
+    "mean_absolute_error": 0.9841,
+    "interpretation": "Slight / Poor Agreement"
+  }
+}
