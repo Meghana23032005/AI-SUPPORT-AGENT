@@ -35,7 +35,7 @@ An end-to-end, production-grade AI Customer Support Agent built for **Apple Supp
 
 ---
 
-## ⏱ Reproduction Guide (Under 10 Minutes)
+## ⏱ Reproduction Guide 
 
 The entire pipeline is deterministic, self-contained, and requires **no external API keys** or GPU hardware.
 
