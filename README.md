@@ -39,51 +39,18 @@ An end-to-end, production-grade AI Customer Support Agent built for **Apple Supp
 
 The entire pipeline is deterministic, self-contained, and requires **no external API keys** or GPU hardware.
 
-### 1. Clone & Set Up Environment
-```bash
-git clone <repo-url>
-cd hiver-support-agent
+# 1. Clone  repo
+git clone https://github.com/Meghana23032005/AI-SUPPORT-AGENT.git
+cd AI-SUPPORT-AGENT
 
-# Install dependencies
+# 2. Install dependencies
 pip install -r requirements.txt
-```
 
-### 2. Configure Environment 
-```bash
-cp .env.example .env
-# Optional: add GEMINI_API_KEY or OPENAI_API_KEY.
-# If omitted, the system seamlessly runs high-performance deterministic grounded generation!
-```
+# 3. Choose what to run:
+python -m streamlit run app/streamlit_app.py   # To open the UI demo
+python scripts/05_run_full_evaluation.py       # To reproduce benchmark numbers
+python -m pytest -v                            # To run the test suite
 
-### 3. Run the End-to-End Pipeline 
-```bash
-# Step 1: Extract 25,000 Apple tweets from twcs.csv 
-python scripts/01_extract_apple_data.py
-
-# Step 2: Reconstruct threads & generate zero-leakage splits 
-python scripts/02_build_threads.py
-
-# Step 3: Train baselines & build vector store index 
-python scripts/03_train_models.py
-
-# Step 4: Build stratified 200-sample Golden Set 
-python scripts/04_build_golden_set.py
-
-# Step 5: Run full comparative evaluation harness 
-python scripts/05_run_full_evaluation.py
-```
-
-
-### 4. Run the Unit & Integration Test Suite
-```bash
-python -m pytest -v
-```
-
-
-### 5. Launch the Interactive Streamlit Demo
-```bash
-python -m streamlit run app/streamlit_app.py
-```
 Open `http://localhost:8501` in your browser to test incoming customer inquiries with interactive preset scenarios.
 
 ---
