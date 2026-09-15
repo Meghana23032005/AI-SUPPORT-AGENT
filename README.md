@@ -47,9 +47,7 @@ cd AI-SUPPORT-AGENT
 pip install -r requirements.txt
 
 # 3. Choose what to run:
-python -m streamlit run app/streamlit_app.py   # To open the UI demo
-python scripts/05_run_full_evaluation.py       # To reproduce benchmark numbers
-python -m pytest -v                            # To run the test suite
+python -m streamlit run app/streamlit_app.py   
 
 Open `http://localhost:8501` in your browser to test incoming customer inquiries with interactive preset scenarios.
 
