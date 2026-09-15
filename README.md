@@ -2,7 +2,7 @@
 
 [![Tests](https://img.shields.io/badge/tests-12%20passed-brightgreen.svg)](tests/)
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.14-blue.svg)](requirements.txt)
-[![Reproduction](https://img.shields.io/badge/reproduction-under%208%20min-orange.svg)](#-reproduction-guide-under-10-minutes)
+[![Reproduction](https://img.shields.io/badge/reproduction-under%208%20min-orange.svg)](#-reproduction-guide)
 [![Dataset](https://img.shields.io/badge/dataset-twcs.csv%20%28AppleSupport%29-purple.svg)](https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter)
 
 An end-to-end, production-grade AI Customer Support Agent built for **Apple Support** (`@AppleSupport`) using the real-world Kaggle **Customer Support on Twitter** (`twcs.csv`) dataset.
@@ -48,37 +48,37 @@ cd hiver-support-agent
 pip install -r requirements.txt
 ```
 
-### 2. Configure Environment (Optional API Keys)
+### 2. Configure Environment 
 ```bash
 cp .env.example .env
 # Optional: add GEMINI_API_KEY or OPENAI_API_KEY.
 # If omitted, the system seamlessly runs high-performance deterministic grounded generation!
 ```
 
-### 3. Run the End-to-End Pipeline (Under 8 Minutes)
+### 3. Run the End-to-End Pipeline 
 ```bash
-# Step 1: Extract 25,000 Apple tweets from twcs.csv (~6 seconds)
+# Step 1: Extract 25,000 Apple tweets from twcs.csv 
 python scripts/01_extract_apple_data.py
 
-# Step 2: Reconstruct threads & generate zero-leakage splits (~5 seconds)
+# Step 2: Reconstruct threads & generate zero-leakage splits 
 python scripts/02_build_threads.py
 
-# Step 3: Train baselines & build vector store index (~6 seconds)
+# Step 3: Train baselines & build vector store index 
 python scripts/03_train_models.py
 
-# Step 4: Build stratified 200-sample Golden Set (~3 seconds)
+# Step 4: Build stratified 200-sample Golden Set 
 python scripts/04_build_golden_set.py
 
-# Step 5: Run full comparative evaluation harness (~5 seconds)
+# Step 5: Run full comparative evaluation harness 
 python scripts/05_run_full_evaluation.py
 ```
-*Total execution time on a standard laptop: ~25 seconds.*
+
 
 ### 4. Run the Unit & Integration Test Suite
 ```bash
 python -m pytest -v
 ```
-*All 12 unit and integration tests pass in ~1.6 seconds.*
+
 
 ### 5. Launch the Interactive Streamlit Demo
 ```bash
@@ -91,16 +91,16 @@ Open `http://localhost:8501` in your browser to test incoming customer inquiries
 ## 📁 Repository Structure
 ```
 hiver-support-agent/
-├── README.md                           # Reproduction guide (<10 min), architecture & headline metrics
+├── README.md                           # Reproduction guide , architecture & headline metrics
 ├── requirements.txt                    # Clean locked dependencies
-├── .env.example                        # Safe environment template (no hardcoded keys)
+├── .env.example                        # Safe environment template 
 ├── config/
 │   ├── __init__.py
 │   └── settings.py                     # Centralized paths, model thresholds, seeds
 ├── data/
 │   ├── raw/                            # Extracted 25,000 Apple tweets
 │   ├── processed/                      # 5,887 reconstructed multi-turn conversation threads
-│   ├── splits/                         # Conversation-level train/val/test splits (Zero Leakage)
+│   ├── splits/                         # Conversation-level train/val/test splits 
 │   ├── models/                         # Trained classifier and vector store artifacts
 │   └── golden/
 │       ├── apple_golden_eval_200.csv   # 200 hand-curated & verified golden test examples
@@ -161,7 +161,7 @@ Derived empirically from `@AppleSupport` conversations:
   - **Scale & Realism**: #2 most active brand in `twcs.csv` with 106,860 tweets.
   - **Technical Depth**: Rich ecosystem across hardware, software, OS updates, identity security, and financial transactions.
   - **Distinct Escalation Boundaries**: Clean boundary between automatable software steps (`Settings > General > About`, force restart) vs mandatory human escalations (Genius Bar repairs, Apple ID lockouts).
-  - **Reproduction Speed**: A stratified 25,000-tweet sub-sample yields 5,887 complete threads and executes end-to-end in **under 8 minutes**.
+  - **Reproduction Speed**: A stratified 25,000-tweet sub-sample yields 5,887 complete threads and executes end-to-end in .
 * **AmazonHelp Rejected**: 169,840 tweets; dominated by repetitive parcel tracking and delivery status with narrow technical depth.
 * **Uber_Support & SpotifyCares Rejected**: 90%+ of public tweets immediately push users to private in-app forms without substantive technical troubleshooting.
 
